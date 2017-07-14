@@ -4,7 +4,8 @@
   "description": "淡蛋blog的api项目",
   "private": true,
   "dependencies": {
-    "egg": "^1.4.0"
+    "egg": "^1.4.0",
+    "graphql": "^0.10.3"
   },
   "devDependencies": {
     "autod": "^2.8.0",
@@ -12,6 +13,7 @@
     "egg-bin": "^3.4.0",
     "egg-ci": "^1.6.0",
     "egg-mock": "^3.7.0",
+    "egg-mongoose": "^2.1.0",
     "egg-mysql": "^3.0.0",
     "eslint": "^3.19.0",
     "eslint-config-egg": "^4.2.0",

@@ -1,4 +1,7 @@
 'use strict';
 
-// had enabled by egg
-// exports.static = true;
+// 增加egg-mongoose插件
+exports.mongoose = {
+  enable: true,
+  package: 'egg-mongoose',
+};
