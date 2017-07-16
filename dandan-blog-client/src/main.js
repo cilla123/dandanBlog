@@ -5,10 +5,11 @@ import App from './App'
 import router from './router'
 
 import axios from 'axios'
-
 axios.defaults.withCredentials = true
 Vue.prototype.$ajax = axios
 
+// 手机端控制台
+import vConsole from 'vconsole'
 
 Vue.config.productionTip = false
 

@@ -9,7 +9,7 @@
 export default {
   name: 'app',
   mounted(){
-    this.$ajax.get('http://192.168.1.105:7001/api/v1/user', {
+    this.$ajax.post('/api/v1/user', {
       // csrfToken: '22'
     })
     .then(function (response) {
@@ -17,7 +17,6 @@ export default {
     })
     .catch(function (error) {
       console.log(error);
-      // alert("11");
     });
   }
 }
