@@ -1,21 +1,37 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <table>
+      <th>电话</th>
+      <th>昵称</th>
+      <th>年龄</th>
+      <tbody>
+        <tr v-for="user in userList">
+          <td>{{ user.phone }}</td>
+          <td>{{ user.nickName }}</td>
+          <td>{{ user.age }}</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
 export default {
   name: 'app',
+  data (){
+    return {
+      userList: []
+    }
+  },
   mounted(){
-    this.$ajax.post('/api/v1/user', {
-      // csrfToken: '22'
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
+    this.$ajax.get('/api/v1/users', {
+      // phone: '15217681427',
+      // nickName: 'Ben',
+      // age: '22',
+    }).then((response) => {
+      console.log(response.data);
+      this.userList = response.data;
+    }).catch((error) => {
       console.log(error);
     });
   }
@@ -23,12 +39,5 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
