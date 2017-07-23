@@ -1,0 +1,3 @@
+rootProject.name = 'ddLife'
+
+include ':app'
